@@ -7,7 +7,7 @@ let Post = function statelessFunctionComponentClass(props) {
         <div className="chatContainer">
             <div className="chatMessages">
                 {props.source.map( chat => {
-                    return( <p className="chatMessage"><span className="chatUser">{chat.poster}</span> {chat.text}</p>);
+                    return( <p className="chatMessage"><span className="chatUser">{chat.name}</span> {chat.text}</p>);
                 })}
             </div>
             <div className="message">

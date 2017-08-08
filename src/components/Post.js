@@ -4,7 +4,9 @@ import Chat from './Chat.js';
 let Post = function statelessFunctionComponentClass(props) {
     let postId = props.source.postId;
     let poster = props.source.poster;
-    let post = props.source.post;
+    let post = props.source.text;
+    let chatArray = props.source.chat;
+
 
 
     return (
@@ -14,7 +16,7 @@ let Post = function statelessFunctionComponentClass(props) {
                 <h3 className="userName">{poster}</h3>
                 <p className="postText">{post}</p>
             </div>
-            <Chat source={props.source.Chat}/>
+            <Chat source={chatArray}/>
         </div>
     );
 };
