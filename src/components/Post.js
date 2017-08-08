@@ -4,14 +4,8 @@ import Chat from './Chat.js';
 let Post = function statelessFunctionComponentClass(props) {
     let postId = props.source.postId;
     let poster = props.source.poster;
-    let post = props.source.text;
-    let chatArray = [];
-    let chat = function () {
-        props.source.chat.map(function (chatmssg) {
-            chatArray.unshift(chatmssg);
-        });
-        return chatArray;
-    };
+    let post = props.source.post;
+
 
     return (
         <div className="post animated slideUp" data-postid={postId}>
@@ -20,7 +14,7 @@ let Post = function statelessFunctionComponentClass(props) {
                 <h3 className="userName">{poster}</h3>
                 <p className="postText">{post}</p>
             </div>
-            <Chat source={chatArray}/>
+            <Chat source={props.source.Chat}/>
         </div>
     );
 };
