@@ -1,7 +1,7 @@
 //send button even
 $('body').on('click','.send',sendMessageButton);
 //ender button even
-$('.text').keypress(sendMessageEnter);
+$('body').on('keyup', '.text',sendMessageEnter);
 
 
 //send data when enter is pressed
@@ -18,12 +18,12 @@ function sendMessageEnter(keypress){
             let messageText = messageElement.val();
             //builds chat message object
             let chatMessageData = {
-                user: 'default chat user',
+                name: 'default chat user',
                 text: messageText,
             };
             let postToSend;
             //sends chat object to server
-            let push = database.ref().child('/posts/'+ chatpostId+'/chat/'+ 'name').push();
+            let push = database.ref().child('/posts/'+ chatpostId+'/chat/').push();
             push.set(chatMessageData);
             messageElement.val('');
         }
@@ -42,7 +42,7 @@ function sendMessageButton(message){
         let messageText = messageElement.val();
         //builds data object to send
         let chatMessageData = {
-            user: 'default chat user',
+            name: 'default chat user',
             text: messageText,
             chatpostId: chatpostId
         };

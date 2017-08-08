@@ -16,7 +16,7 @@ let MainUserContainer = React.createClass({
     render: function () {
         return <div className="container MainUserContainer">
             <div className="userNav header">
-                <img src="" alt="StudyBook" className="logo"/>
+                <h1 className="logo">StudyBook</h1>
             </div>
             <div className="userContent">
                 <div className="friend">

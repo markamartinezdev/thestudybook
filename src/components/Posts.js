@@ -32,7 +32,7 @@ let Posts = React.createClass({
                         fbpostchats.forEach(function (postchats) {
                             let chatItem = postchats.val();
                             chatItem.key = postchats.key;
-                            chatPosts.push(chatItem)
+                            chatPosts.unshift(chatItem)
                             console.log(chatItem);
                         });
                     }
